@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Edit Game{% endblock %}
+{% block content %}
+<form method="POST" class="card card-body">
+    <label>Назва</label>
+    <input type="text" name="title" value="{{ game.title }}" class="form-control" required>
+    <label>Жанр</label>
+    <input type="text" name="genre" value="{{ game.genre }}" class="form-control" required>
+    <label>Платформа</label>
+    <input type="text" name="platform" value="{{ game.platform }}" class="form-control" required>
+    <label>Опис</label>
+    <textarea name="description" class="form-control">{{ game.description }}</textarea>
+    <button type="submit" class="btn btn-warning mt-3">Оновити</button>
+</form>
+{% endblock %}

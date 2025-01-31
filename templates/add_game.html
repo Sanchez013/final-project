@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Add Game{% endblock %}
+{% block content %}
+<form method="POST" class="card card-body">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" required>
+    <label>Genre</label>
+    <input type="text" name="genre" class="form-control" required>
+    <label>Platform</label>
+    <input type="text" name="platform" class="form-control" required>
+    <label>Description</label>
+    <textarea name="description" class="form-control"></textarea>
+    <button type="submit" class="btn btn-success mt-3">Add</button>
+</form>
+{% endblock %}

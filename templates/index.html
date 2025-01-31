@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block title %}Game List{% endblock %}
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Жанр</th>
+            <th>Платформа</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for game in games %}
+        <tr>
+            <td>{{ game.title }}</td>
+            <td>{{ game.genre }}</td>
+            <td>{{ game.platform }}</td>
+        </tr>
+        <td>
+            <a href="{{ url_for('edit_game', id=game.id) }}" class="btn btn-warning btn-sm">Edit</a>
+            <a href="{{ url_for('delete_game', id=game.id) }}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
